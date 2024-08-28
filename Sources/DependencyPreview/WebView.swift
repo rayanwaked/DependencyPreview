@@ -53,7 +53,7 @@ struct WebView: ViewRepresentable {
     private func updateWebView(_ webView: WKWebView) {
         webView.loadHTMLString(html, baseURL: nil)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.adjustWebViewContent(webView)
         }
     }
