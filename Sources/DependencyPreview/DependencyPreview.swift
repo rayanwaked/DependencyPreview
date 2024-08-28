@@ -9,22 +9,22 @@ import SwiftUI
 import WebKit
 
 public struct DependencyPreview: View {
-    let mermaidCode: String
+    let logic: String
     
-    public init(mermaidCode: String) {
-        self.mermaidCode = mermaidCode
+    public init(logic: String) {
+        self.logic = logic
     }
     
     public var body: some View {
         GeometryReader { geometry in
             VStack {
-                WebView(html: generateHTML(from: mermaidCode), viewSize: geometry.size)
+                WebView(html: generateHTML(from: logic), viewSize: geometry.size)
             }
             .edgesIgnoringSafeArea(.all)
         }
     }
     
-    private func generateHTML(from mermaidCode: String) -> String {
+    private func generateHTML(from logic: String) -> String {
         """
         <!DOCTYPE html>
         <html>
@@ -60,7 +60,7 @@ public struct DependencyPreview: View {
         <body>
             <div id="diagram-container">
                 <div id="diagram" class="mermaid">
-                \(mermaidCode)
+                \(logic)
                 </div>
             </div>
             <script>

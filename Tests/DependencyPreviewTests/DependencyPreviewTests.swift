@@ -10,9 +10,9 @@ import XCTest
 
 final class DependencyPreviewTests: XCTestCase {
     func testDependencyPreviewInitialization() {
-        let mermaidCode = "graph TD; A-->B; B-->C;"
-        let diagram = DependencyPreview(mermaidCode: mermaidCode)
+        let logic = "graph TD; A-->B; B-->C;"
+        let diagram = DependencyPreview(logic: logic)
         XCTAssertNotNil(diagram)
-        XCTAssertEqual(diagram.mermaidCode, mermaidCode)
+        XCTAssertEqual(diagram.logic, logic)
     }
 }
